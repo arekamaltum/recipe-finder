@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>🍳 Recipe Finder</h1>
+                </div>
+                <div class="nav-links">
+                    <button class="nav-btn active" data-section="search">Search Recipes</button>
+                    <button class="nav-btn" data-section="categories">Categories</button>
+                    <button class="nav-btn" data-section="areas">Cuisines</button>
+                    <button class="nav-btn" data-section="random">Random Recipe</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section id="search-section" class="active-section">
+                <div class="search-container">
+                    <div class="search-by-name">
+                        <input type="text" id="recipe-search" placeholder="Search recipe by name...">
+                        <button id="search-by-name-btn" class="btn primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    
+                    <div class="ingredients-input">
+                        <div class="input-group">
+                            <input type="text" id="ingredient-input" placeholder="Or enter ingredients...">
+                            <button id="add-ingredient" class="btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                        <div class="voice-input">
+                            <button id="voice-input-btn" class="btn">
+                                <i class="fas fa-microphone"></i> Voice Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ingredients-list" id="ingredients-list">
+                        <!-- Dynamic ingredients tags will be added here -->
+                    </div>
+
+                    <div class="filters">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <!-- Categories will be populated from API -->
+                        </select>
+
+                        <select id="area-filter">
+                            <option value="">All Cuisines</option>
+                            <!-- Areas will be populated from API -->
+                        </select>
+                    </div>
+
+                    <button id="search-recipes" class="btn primary">Find Recipes</button>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section id="categories-section" class="section">
+                <div class="categories-grid">
+                    <!-- Categories will be populated here -->
+                </div>
+            </section>
+
+            <!-- Areas/Cuisines Section -->
+            <section id="areas-section" class="section">
+                <div class="areas-grid">
+                    <!-- Areas will be populated here -->
+                </div>
+            </section>
+
+            <!-- Random Recipe Section -->
+            <section id="random-section" class="section">
+                <!-- Random recipe will be displayed here -->
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section">
+                <!-- Recipe cards will be dynamically added here -->
+            </section>
+        </main>
+
+        <!-- Recipe Modal -->
+        <div id="recipe-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-recipe-content">
+                    <!-- Recipe details will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>🍳 About Us</h2>
+                    <p>Recipe Finder is your go-to platform for discovering delicious recipes from around the world. Whether you're looking for a quick meal or a gourmet dish, we've got you covered.</p>
+                </div>
+                <div class="footer-section newsletter">
+                    <h2>📬 Newsletter</h2>
+                    <p>Subscribe to our newsletter to get the latest recipes and cooking tips delivered straight to your inbox.</p>
+                    <form id="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email..." required>
+                        <button type="submit" class="btn primary">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section links">
+                    <h2>🔗 Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Recipe Finder. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
